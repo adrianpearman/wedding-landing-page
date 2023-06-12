@@ -1,0 +1,47 @@
+// Font Faces
+@font-face {
+  font-family: Avenir;
+  src: url(./assets/fonts/avenir-font/AvenirLTStd-Book.ttf);
+}
+
+@font-face {
+  font-family: Fontspring;
+  src: url(./assets/fonts/fontspring-font/fontspring-reg.otf);
+}
+
+@font-face {
+  font-family: "Fontspring-Bold";
+  src: url(./assets/fonts/fontspring-font/fontspring-bd.otf);
+}
+
+@font-face {
+  font-family: Modernline;
+  src: url(./assets/fonts/modernline-font/modernline.otf);
+}
+
+// Colors
+$black: #242424;
+$cream: #fffaf1;
+$grey: #848c93;
+$greyDark: #343a40;
+$greyLight: #b1b1b1;
+$primaryColorDark: #1b4508;
+$primaryColorLight: #29660d;
+$white: #ffffff;
+$wrapperColor: rgba($white, 0.5);
+// Fonts
+// $headingFont: "Recia Serif", serif;
+$primaryFont: Avenir, sans-serif;
+$primaryFontCursive: Modernline, cursive;
+$secondaryFont: Fontspring, Arial;
+$secondaryFontBold: "Fontspring-Bold", "Arial Black";
+$rootFontSize: 10px;
+// Display widths
+$mobileSmall: 425px;
+$mobile: 500px;
+$mobileLarge: 600px;
+$tablet: 768px;
+$displaySmallLaptop: 900px;
+$displayLargeLaptop: 1440px;
+$displaySmallDesktop: 1920px;
+$displaySmallDesktop: 2400px;

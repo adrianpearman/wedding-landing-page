@@ -1,0 +1,67 @@
+@use "./variables" as *;
+//
+html {
+  font-family: $primaryFont;
+  font-size: $rootFontSize;
+  scroll-behavior: smooth;
+}
+// Removing Margin and Padding
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+nav,
+ul,
+li,
+section,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1400px;
+  width: 90%;
+}
+
+main {
+  position: relative;
+}
+
+.backToTop {
+  bottom: 10px;
+  position: fixed;
+  right: 10px;
+
+  button {
+    background-color: transparent;
+    border: 2px solid $primaryColorDark;
+    border-radius: 50%;
+    color: $primaryColorDark;
+    font-size: 3rem;
+    height: 50px;
+    opacity: 0;
+    transition: all 200ms;
+    width: 50px;
+
+    &:focus,
+    &:hover {
+      background-color: $primaryColorDark;
+      border-color: $cream;
+      color: $cream;
+      cursor: pointer;
+    }
+
+    &.show {
+      opacity: 1;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

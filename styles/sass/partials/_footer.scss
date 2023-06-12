@@ -1,0 +1,13 @@
+@use "./variables" as *;
+
+footer {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    width: 100%;
+  }
+}

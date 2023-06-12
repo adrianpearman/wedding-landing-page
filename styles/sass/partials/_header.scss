@@ -1,0 +1,77 @@
+@use "./variables" as *;
+
+header {
+  height: 100vh;
+  background: $cream;
+  background-image: url(./assets/images/jordanadrian-120.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  .tint {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgb($greyDark, 0.4);
+  }
+
+  .wrapper {
+    align-items: center;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    height: 30%;
+    justify-content: space-around;
+    margin-top: 130px;
+    z-index: 1;
+    //
+    opacity: 0;
+    transition: opacity 1s;
+
+    &.show {
+      opacity: 1;
+    }
+  }
+
+  h1 {
+    font-size: calc(4rem + 2vw);
+    letter-spacing: 10px;
+    text-align: center;
+    text-transform: uppercase;
+
+    span {
+      font-family: $primaryFontCursive;
+      padding: 0 20px;
+      text-transform: lowercase;
+    }
+  }
+
+  p {
+    font-size: calc(3rem + 2vw);
+  }
+
+  button {
+    background: transparent;
+    border-radius: 4px;
+    border: 2px solid $white;
+    color: inherit;
+    font-family: inherit;
+    font-size: 3rem;
+    letter-spacing: 3px;
+    padding: 20px 40px 15px;
+    transition: all 200ms;
+
+    &:focus,
+    &:hover {
+      background-color: $white;
+      color: $primaryColorDark;
+      cursor: pointer;
+    }
+  }
+}

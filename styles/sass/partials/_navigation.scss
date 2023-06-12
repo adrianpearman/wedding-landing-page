@@ -1,0 +1,61 @@
+@use "./variables" as *;
+
+nav {
+  background-color: transparent;
+  color: $white;
+  font-family: $secondaryFont;
+  font-size: 2.2rem;
+  left: 0;
+  letter-spacing: 3px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  ul {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+
+    li {
+      text-align: center;
+
+      &:first-child {
+        padding: 10px 0;
+        width: 10%;
+      }
+
+      &:focus,
+      &:hover {
+        cursor: pointer;
+      }
+
+      a {
+        border-bottom: 2px solid transparent;
+        color: inherit;
+        display: inline-block;
+        letter-spacing: 5px;
+        padding: 10px 0;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all 500ms;
+        width: 100%;
+      }
+    }
+  }
+
+  &.active {
+    background-color: $cream;
+    a {
+      color: $greyLight;
+
+      &.active,
+      &:focus,
+      &:hover {
+        border-bottom: 2px solid $primaryColorDark;
+        color: $black;
+      }
+    }
+  }
+}

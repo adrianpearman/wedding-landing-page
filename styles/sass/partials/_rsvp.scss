@@ -1,0 +1,92 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.rsvp {
+  @include contentHeight;
+
+  .wrapper {
+    background: $wrapperColor;
+    height: 90%;
+    width: 90%;
+
+    h2 {
+      @include sectionTitle;
+    }
+  }
+
+  .hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .none {
+    display: none;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+    font-size: 3rem;
+    transition: all 300ms;
+
+    ul {
+      width: 100%;
+    }
+
+    li {
+      padding: 20px 0;
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        span {
+          font-family: $secondaryFont;
+          text-transform: uppercase;
+          border-bottom: 2px solid $primaryColorDark;
+          margin-right: 10px;
+        }
+      }
+
+      select {
+        padding: 10px;
+      }
+    }
+  }
+
+  label {
+    font-family: $secondaryFont;
+    margin: 20px 0;
+  }
+
+  input {
+    background-color: transparent;
+    border-color: transparent;
+    border-bottom: 2px solid $primaryColorDark;
+    font-family: $secondaryFont;
+    padding: 20px 20px;
+    margin-bottom: 10px;
+
+    &::placeholder {
+      text-transform: uppercase;
+      letter-spacing: 5px;
+    }
+  }
+  button {
+    background-color: $cream;
+    border: 1px solid $primaryColorDark;
+    color: $primaryColorDark;
+    font-family: $secondaryFont;
+    padding: 20px 10px;
+    transition: all 300ms;
+
+    &:hover {
+      background-color: $primaryColorDark;
+      color: $cream;
+    }
+  }
+}

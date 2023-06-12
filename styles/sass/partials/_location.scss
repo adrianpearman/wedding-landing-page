@@ -1,0 +1,139 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.location {
+  @include contentHeight;
+  height: initial;
+  .wrapper {
+    background: $wrapperColor;
+
+    h2 {
+      @include sectionTitle;
+    }
+  }
+
+  .contentContainer {
+    display: flex;
+  }
+
+  .imgContainer {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+
+    .verticalPhotoContainer {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      justify-content: space-between;
+      position: relative;
+
+      .col {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: calc((100% / 3) - 5px);
+        justify-content: space-between;
+        transition: all 600ms;
+
+        .img {
+          background-color: $black;
+          overflow: hidden;
+          transition: all 500ms;
+          width: 100%;
+        }
+
+        .img-1,
+        .img-5,
+        .img-8 {
+          height: calc(50% - 5px);
+        }
+
+        .img-2,
+        .img-3,
+        .img-6,
+        .img-7 {
+          height: calc(25% - 5px);
+        }
+
+        .img-4 {
+          height: calc(60% - 5px);
+        }
+
+        .img-5 {
+          height: calc(40% - 5px);
+        }
+
+        img {
+          height: 100%;
+          object-fit: cover;
+          opacity: 0.8;
+          width: 100%;
+        }
+      }
+
+      .col-1,
+      .col-2,
+      .col-3 {
+        position: absolute;
+        top: 0;
+      }
+      .col-1 {
+        left: 0;
+      }
+
+      .col-2 {
+        left: calc(100% / 3);
+      }
+
+      .col-3 {
+        left: calc((100% / 3) * 2);
+      }
+
+      .col-hidden {
+        // left: calc((100% / 3) * -1);
+        opacity: 0;
+      }
+    }
+  }
+
+  .textContainer {
+    position: relative;
+    width: 40%;
+
+    .venueDetailContainer {
+      opacity: 1;
+      display: flex;
+      flex-direction: column;
+      transition: all 600ms;
+
+      p {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        text-align: center;
+
+        span {
+          display: block;
+          font-family: $secondaryFont;
+          font-size: 4rem;
+          letter-spacing: 5px;
+          margin: 10px auto;
+          text-transform: uppercase;
+        }
+      }
+
+      .mapContainer {
+        width: 80%;
+        margin: 20px auto;
+
+        iframe {
+          width: 100%;
+        }
+      }
+    }
+
+    .hideVenueDetails {
+      opacity: 0;
+    }
+  }
+}
