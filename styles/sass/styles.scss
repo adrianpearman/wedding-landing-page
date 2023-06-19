@@ -4,11 +4,12 @@
 @use "./vendor/slider";
 // Partials
 @use "./partials/base";
-@use "./partials/navigation";
-@use "./partials/header";
 @use "./partials/aboutUs";
-@use "./partials/location";
 @use "./partials/details";
-@use "./partials/rsvp";
-@use "./partials/links";
 @use "./partials/footer";
+@use "./partials/header";
+@use "./partials/links";
+@use "./partials/location";
+@use "./partials/navigation";
+@use "./partials/rsvp";
+@use "./partials/mediaQueries";
