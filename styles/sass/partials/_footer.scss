@@ -6,8 +6,18 @@ footer {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  background-color: $primaryColorDark;
 
   p {
+    font-size: 2rem;
     width: 100%;
+    color: $cream;
+
+    a {
+      color: inherit;
+      border-bottom: 2px solid $cream;
+      text-decoration: none;
+    }
   }
 }

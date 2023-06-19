@@ -1,0 +1,155 @@
+@use "./variables" as *;
+
+// 1100px
+@media (max-width: calc($displaySmallLaptop + 200px)) {
+  .links .imgContainer div {
+    height: 50%;
+    width: 50%;
+  }
+}
+// 900px
+@media (max-width: $displaySmallLaptop) {
+  nav ul.wrapper {
+    width: 100%;
+    margin: 0;
+    font-size: 2rem;
+  }
+
+  nav ul li a {
+    letter-spacing: 2px;
+  }
+}
+// 768px
+@media (max-width: $tablet) {
+  //  NAVIGATION
+  nav {
+    .largeNav {
+      display: none;
+    }
+    .mobileNavContainer {
+      display: flex;
+    }
+    #hamburgerOpen {
+      display: block;
+    }
+
+    &.active {
+      a.active,
+      a:focus,
+      a:hover {
+        border-bottom: 2px solid transparent;
+        color: inherit;
+        cursor: pointer;
+      }
+
+      a,
+      ul i {
+        color: $cream;
+      }
+
+      i {
+        color: $primaryColorDark;
+      }
+    }
+  }
+  // ABOUT US
+  .aboutUs {
+    .contentContainer {
+      flex-direction: column;
+    }
+
+    .imgContainer,
+    .textContainer {
+      width: 80%;
+      margin: 10px auto;
+    }
+
+    .textContainer p {
+      margin-top: 0;
+      font-size: 2rem;
+    }
+  }
+  // LOCATION
+  .location {
+    .textContainer .venueDetailContainer p span {
+      letter-spacing: 2px;
+    }
+  }
+}
+// 600px
+@media (max-width: $mobileLarge) {
+  .wrapper {
+    width: 100%;
+
+    h2 {
+      font-size: calc(3rem + 2vw) !important;
+    }
+  }
+  // LOCATION
+  .location {
+    .contentContainer {
+      flex-direction: column;
+    }
+
+    .imgContainer,
+    .textContainer {
+      width: 100%;
+    }
+
+    .imgContainer {
+      .verticalPhotoContainer {
+        display: none;
+      }
+      .slider {
+        display: block;
+      }
+    }
+  }
+  // DETAILS
+  .details {
+    .timelineContainer {
+      display: none;
+    }
+
+    .timelineContainerMobile {
+      display: flex;
+    }
+  }
+  // ACCOMODATIONS
+  .links {
+    .imgContainer,
+    .textContainer {
+      width: 100%;
+    }
+
+    .imgContainer {
+      min-height: 350px;
+    }
+    .accomodationContainer {
+      flex-direction: column !important;
+    }
+  }
+}
+// 500px
+@media (max-width: $mobile) {
+  .rsvp input {
+    &::placeholder {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  }
+}
+// 425px;
+@media (max-width: $mobileSmall) {
+  .aboutUs,
+  .location,
+  .details,
+  .rsvp,
+  .links {
+    .wrapper {
+      h2 {
+        font-size: 3rem;
+      }
+    }
+  }
+}
