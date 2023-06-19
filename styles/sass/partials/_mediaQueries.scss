@@ -9,6 +9,7 @@
 }
 // 900px
 @media (max-width: $displaySmallLaptop) {
+  // NAVIGATION
   nav ul.wrapper {
     width: 100%;
     margin: 0;
@@ -17,6 +18,19 @@
 
   nav ul li a {
     letter-spacing: 2px;
+  }
+  // RSVP
+  .rsvp {
+    form {
+      li {
+        flex-direction: column;
+        align-items: stretch;
+
+        p {
+          margin-bottom: 20px;
+        }
+      }
+    }
   }
 }
 // 768px
@@ -76,15 +90,8 @@
     }
   }
 }
-// 600px
-@media (max-width: $mobileLarge) {
-  .wrapper {
-    width: 100%;
-
-    h2 {
-      font-size: calc(3rem + 2vw) !important;
-    }
-  }
+// 700px
+@media (max-width: calc($mobileLarge + 100px)) {
   // LOCATION
   .location {
     .contentContainer {
@@ -105,6 +112,17 @@
       }
     }
   }
+}
+// 600px
+@media (max-width: $mobileLarge) {
+  .wrapper {
+    width: 100%;
+
+    h2 {
+      font-size: calc(3rem + 2vw) !important;
+    }
+  }
+
   // DETAILS
   .details {
     .timelineContainer {
