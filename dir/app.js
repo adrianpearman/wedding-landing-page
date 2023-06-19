@@ -1,19 +1,33 @@
 // DOM Elements
-const backToTopButton = document.getElementById("backToTop");
+// Navigation
 const navigation = document.querySelector("nav");
-const rsvpButton = document.getElementById("rsvpButton");
-const venueColumns = document.querySelectorAll(".col");
-const detailsContainer = document.querySelector(".detailsContainer");
-const venueDetailContainer = document.querySelector(".venueDetailContainer");
-const venueInfoContainer = document.querySelector(".venueInfoContainer");
-const userIDForm = document.querySelector("#userIDForm");
-const accomdationContainers = document.querySelectorAll(
-  ".accomodationContainer"
-);
-const timelineItems = document.querySelectorAll(".timelineItem");
+const mobileNavigation = document.querySelector(".mobileNavContainer");
+const mobileNavHamburgerOpen = document.getElementById("hamburgerOpen");
+const mobileNavHamburgerClose = document.getElementById("hamburgerClose");
+// About Us
 const aboutUsContentContainer = document.querySelector(
   ".aboutUs .contentContainer"
 );
+// Venue
+const venueColumns = document.querySelectorAll(".col");
+const venueDetailContainer = document.querySelector(".venueDetailContainer");
+const venueInfoContainer = document.querySelector(".venueInfoContainer");
+// Details
+const detailsContainer = document.querySelector(".detailsContainer");
+const timelineContainer = document.querySelector(".timelineContainer");
+const timelineContainerMobile = document.querySelector(
+  ".timelineContainerMobile"
+);
+// RSVP
+const userIDForm = document.querySelector("#userIDForm");
+// Links
+const accomdationContainers = document.querySelectorAll(
+  ".accomodationContainer"
+);
+// General
+const rsvpButton = document.getElementById("rsvpButton");
+const backToTopButton = document.getElementById("backToTop");
+
 // Sections
 const headerSection = document.querySelector("header");
 const aboutUsSection = document.getElementById("aboutUs");
@@ -44,29 +58,30 @@ slides.forEach((slide, indx) => {
 
 // ----- FUNCTIONS -----
 //  Helper function for scrolling to element
-const scrollToElement = (element, applyOffset = false) => {
+const scrollToElement = (e, element, applyOffset = false) => {
   const offset = applyOffset === true ? navigation.clientHeight : 0;
   window.scrollTo({
     top: element.offsetTop - offset,
     left: 0,
     behavior: "smooth",
   });
+  // closeMobileNavigation(e);
 };
 // Scroll to section
-const scrollToSection = (event) => {
-  event.preventDefault();
-  if (event.target.hash === "#aboutUs") {
-    scrollToElement(aboutUsSection, true);
-  } else if (event.target.hash === "#location") {
-    scrollToElement(locationSection, true);
-  } else if (event.target.hash === "#details") {
-    scrollToElement(detailSection, true);
-  } else if (event.target.hash === "#rsvp") {
-    scrollToElement(rsvpSection, true);
-  } else if (event.target.hash === "#accomodations") {
-    scrollToElement(linkSection, true);
-  } else {
-    scrollToElement(headerSection);
+const scrollToSection = (e) => {
+  e.preventDefault();
+  if (e.target.hash === "#aboutUs") {
+    scrollToElement(e, aboutUsSection, true);
+  } else if (e.target.hash === "#location") {
+    scrollToElement(e, locationSection, true);
+  } else if (e.target.hash === "#details") {
+    scrollToElement(e, detailSection, true);
+  } else if (e.target.hash === "#rsvp" || e.target.id === "rsvpButton") {
+    scrollToElement(e, rsvpSection, true);
+  } else if (e.target.hash === "#accomodations") {
+    scrollToElement(e, linkSection, true);
+  } else if (e.target.hash === "#header" || e.target.id === "backToTop") {
+    scrollToElement(e, headerSection);
   }
 };
 // Carousel funtion
@@ -89,6 +104,15 @@ const changeSlide = (direction) => {
   slides.forEach((slide, indx) => {
     slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
   });
+};
+// Animate Mobile Navigation
+const closeMobileNavigation = (e) => {
+  e.preventDefault();
+  // e.stopPropagation();
+  mobileNavigation.classList.remove("show");
+};
+const showMobileNavigation = () => {
+  mobileNavigation.classList.add("show");
 };
 // Animate About Us section
 const showAboutUsSection = () => {
@@ -115,23 +139,31 @@ const showDetails = () => {
 };
 // Animating Details SVGs
 const showDetailSVGs = () => {
+  const timelineItems = timelineContainer.children;
+  const mobileTimelineItems = timelineContainerMobile.children;
   setTimeout(() => {
     timelineItems[0].classList.remove("hidden");
+    mobileTimelineItems[0].classList.remove("hidden");
   }, 0);
   setTimeout(() => {
     timelineItems[1].classList.remove("hidden");
+    mobileTimelineItems[1].classList.remove("hidden");
   }, 300);
   setTimeout(() => {
     timelineItems[2].classList.remove("hidden");
+    mobileTimelineItems[2].classList.remove("hidden");
   }, 600);
   setTimeout(() => {
     timelineItems[3].classList.remove("hidden");
+    mobileTimelineItems[3].classList.remove("hidden");
   }, 900);
   setTimeout(() => {
     timelineItems[4].classList.remove("hidden");
+    mobileTimelineItems[4].classList.remove("hidden");
   }, 1200);
   setTimeout(() => {
     timelineItems[5].classList.remove("hidden");
+    mobileTimelineItems[5].classList.remove("hidden");
   }, 1500);
 };
 // Animating the accomodations
@@ -152,6 +184,7 @@ const changeActiveSection = (height) => {
     height < aboutUsSection.offsetTop - navigation.clientHeight
   ) {
     //  HEADER SECTION
+    document.activeElement.blur();
     navigation.classList.remove("active");
     navigationElements[1].children[0].classList.remove("active");
     navigationElements[2].children[0].classList.remove("active");
@@ -164,6 +197,7 @@ const changeActiveSection = (height) => {
     height < locationSection.offsetTop - navigation.clientHeight
   ) {
     // ABOUT US SECTION
+    document.activeElement.blur();
     navigation.classList.add("active");
     navigationElements[1].children[0].classList.add("active");
     navigationElements[2].children[0].classList.remove("active");
@@ -177,6 +211,7 @@ const changeActiveSection = (height) => {
     height < detailSection.offsetTop - navigation.clientHeight
   ) {
     // VENUE SECTION
+    document.activeElement.blur();
     navigation.classList.add("active");
     navigationElements[1].children[0].classList.remove("active");
     navigationElements[2].children[0].classList.add("active");
@@ -190,6 +225,7 @@ const changeActiveSection = (height) => {
     height < rsvpSection.offsetTop - navigation.clientHeight
   ) {
     // DETAILS SECTION
+    document.activeElement.blur();
     navigation.classList.add("active");
     navigationElements[1].children[0].classList.remove("active");
     navigationElements[2].children[0].classList.remove("active");
@@ -204,6 +240,7 @@ const changeActiveSection = (height) => {
     height < linkSection.offsetTop - navigation.clientHeight
   ) {
     // RSVP
+    document.activeElement.blur();
     navigation.classList.add("active");
     navigationElements[1].children[0].classList.remove("active");
     navigationElements[2].children[0].classList.remove("active");
@@ -216,6 +253,7 @@ const changeActiveSection = (height) => {
     height < footerSection.offsetTop - navigation.clientHeight
   ) {
     // ACCOMODATIONS SECTION
+    document.activeElement.blur();
     navigation.classList.add("active");
     navigationElements[1].children[0].classList.remove("active");
     navigationElements[2].children[0].classList.remove("active");
@@ -232,14 +270,19 @@ const weddingObj = {
     // ----- Event Listeners -----
     // Navigation
     navigation.addEventListener("click", scrollToSection);
+    // Mobile Navigation
+    mobileNavHamburgerOpen.addEventListener("click", showMobileNavigation);
+    mobileNavHamburgerClose.addEventListener("click", (e) =>
+      closeMobileNavigation(e)
+    );
+    mobileNavigation.addEventListener("click", (e) => closeMobileNavigation(e));
+
     // Header RSVP Button
-    rsvpButton.addEventListener("click", () =>
-      scrollToElement(rsvpSection, true)
-    );
+    rsvpButton.addEventListener("click", (e) => scrollToSection(e));
     // Scroll to Top Button
-    backToTopButton.addEventListener("click", () =>
-      scrollToElement(headerSection)
-    );
+    backToTopButton.addEventListener("click", (e) => {
+      scrollToSection(e);
+    });
     // Applying Scroll Effects
     document.addEventListener("scroll", (event) => {
       changeActiveSection(window.scrollY);
@@ -263,7 +306,7 @@ const weddingObj = {
     // from a location other than the top of the page
     changeActiveSection(window.scrollY);
     // Header
-    headerSection.children[1].classList.add("show");
+    headerSection.children[0].classList.add("show");
   },
 };
 
