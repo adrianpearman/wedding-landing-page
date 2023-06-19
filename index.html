@@ -9,30 +9,57 @@
   </head>
   <body>
     <main>
-      <nav class="">
-        <ul class="wrapper">
+      <nav>
+        <ul class="largeNav wrapper">
           <li>
-            <a href="#">AJ</a>
+            <a href="#header">AJ</a>
           </li>
           <li>
-            <a class="" href="#aboutUs">Our Story</a>
+            <a href="#aboutUs">Our Story</a>
           </li>
           <li>
-            <a class="" href="#location">Venue</a>
+            <a href="#location">Venue</a>
           </li>
           <li>
-            <a class="" href="#details">Details</a>
+            <a href="#details">Details</a>
           </li>
           <li>
-            <a class="" href="#rsvp">RSVP</a>
+            <a href="#rsvp">RSVP</a>
           </li>
           <li>
-            <a class="" href="#accomodations">Accomodations</a>
+            <a href="#accomodations">Accomodations</a>
           </li>
         </ul>
+        <a href="" id="hamburgerOpen">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+        <div class="mobileNavContainer">
+          <ul class="mobileNav">
+            <li>
+              <a href="#" id="hamburgerClose">
+                <i class="fa-solid fa-xmark"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#aboutUs">Our Story</a>
+            </li>
+            <li>
+              <a href="#location">Venue</a>
+            </li>
+            <li>
+              <a href="#details">Details</a>
+            </li>
+            <li>
+              <a href="#rsvp">RSVP</a>
+            </li>
+            <li>
+              <a href="#accomodations">Accomodations</a>
+            </li>
+          </ul>
+        </div>
       </nav>
       <header>
-        <div class="tint"></div>
+        <!-- <div class="tint"></div> -->
         <div class="wrapper">
           <h1>Adrian <span>and</span> Jordan</h1>
           <button id="rsvpButton">RSVP</button>
@@ -123,7 +150,7 @@
                 </div>
               </div>
 
-              <div class="slider hidden">
+              <div class="slider">
                 <div class="curtain left"></div>
                 <div class="curtain right"></div>
                 <!-- slide 1 -->
@@ -282,6 +309,35 @@
                 <p>1:00am</p>
               </div>
             </div>
+            <div class="timelineContainerMobile hidden">
+              <div class="timelineItem hidden">
+                <img
+                  src="./styles/assets/images/svg/wedding-rings.svg"
+                  alt=""
+                />
+                <p>5:30pm</p>
+              </div>
+              <div class="timelineItem hidden">
+                <img src="./styles/assets/images/svg/cheers.svg" alt="" />
+                <p>6:00pm</p>
+              </div>
+              <div class="timelineItem hidden">
+                <img src="./styles/assets/images/svg/dinner.svg" alt="" />
+                <p>7:00pm</p>
+              </div>
+              <div class="timelineItem hidden">
+                <img src="./styles/assets/images/svg/wedding-cake.svg" alt="" />
+                <p>9:00pm</p>
+              </div>
+              <div class="timelineItem hidden">
+                <img src="./styles/assets/images/svg/disco-ball.svg" alt="" />
+                <p>9:15pm</p>
+              </div>
+              <div class="timelineItem hidden">
+                <img src="./styles/assets/images/svg/wedding-car.svg" alt="" />
+                <p>1:00am</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -418,16 +474,16 @@
     </main>
     <footer>
       <p>Adrian and Jordan - 2023</p>
-      <p>Images from - <a href="">photographer</a></p>
+      <p>
+        Photography by the extremely talented
+        <a href="https://www.instagram.com/darbymitchellphotography/"
+          >Darby Mitchell</a
+        >
+        📸
+      </p>
     </footer>
     <div class="backToTop">
-      <button
-        class=""
-        aria-label="button to scroll to top of web page"
-        id="backToTop"
-      >
-        <i class="fa-solid fa-arrow-up"></i>
-      </button>
+      <i class="fa-solid fa-arrow-up" id="backToTop"></i>
     </div>
 
     <!-- JS Scripts -->
