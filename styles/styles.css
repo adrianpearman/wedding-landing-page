@@ -1451,7 +1451,7 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
 .rsvp form {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 95%;
   margin: 0 auto;
   font-size: 3rem;
   transition: all 300ms;
@@ -1524,6 +1524,13 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
   nav ul li a {
     letter-spacing: 2px;
   }
+  .rsvp form li {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .rsvp form li p {
+    margin-bottom: 20px;
+  }
 }
 @media (max-width: 768px) {
   nav .largeNav {
@@ -1565,13 +1572,7 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
     letter-spacing: 2px;
   }
 }
-@media (max-width: 600px) {
-  .wrapper {
-    width: 100%;
-  }
-  .wrapper h2 {
-    font-size: calc(3rem + 2vw) !important;
-  }
+@media (max-width: 700px) {
   .location .contentContainer {
     flex-direction: column;
   }
@@ -1584,6 +1585,14 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
   }
   .location .imgContainer .slider {
     display: block;
+  }
+}
+@media (max-width: 600px) {
+  .wrapper {
+    width: 100%;
+  }
+  .wrapper h2 {
+    font-size: calc(3rem + 2vw) !important;
   }
   .details .timelineContainer {
     display: none;
