@@ -10,14 +10,31 @@
 // 900px
 @media (max-width: $displaySmallLaptop) {
   // NAVIGATION
-  nav ul.wrapper {
-    width: 100%;
-    margin: 0;
-    font-size: 2rem;
+  nav {
+    ul {
+      &.wrapper {
+        width: 100%;
+        margin: 0;
+        font-size: 2rem;
+      }
+      li a {
+        letter-spacing: 2px;
+      }
+    }
   }
 
-  nav ul li a {
-    letter-spacing: 2px;
+  // HEADER
+  header {
+    .wrapper {
+      height: 40%;
+    }
+
+    h1 {
+      span {
+        display: block;
+        padding: 20px 0 30px;
+      }
+    }
   }
   // RSVP
   .rsvp {
@@ -25,10 +42,6 @@
       li {
         flex-direction: column;
         align-items: stretch;
-
-        p {
-          margin-bottom: 20px;
-        }
       }
     }
   }
