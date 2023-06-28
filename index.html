@@ -4,8 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
     <title>Adrian + Jordan</title>
     <link rel="stylesheet" href="./styles/styles.min.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./styles/assets/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./styles/assets/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./styles/assets/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./styles/assets/favicons/site.webmanifest" />
   </head>
   <body>
     <main>
@@ -344,55 +363,50 @@
       <section class="rsvp" id="rsvp">
         <div class="wrapper">
           <h2>RSVP <span></span></h2>
-          <!--  -->
-          <form id="userIDForm">
+          <!-- InvitationID Form -->
+          <form class="" id="userIDForm">
             <label for="userID">Please enter your invitation ID:</label>
-            <input id="userID" type="text" placeholder="invitation id" />
+            <input id="userID" type="text" placeholder="invitation ID" />
+            <p id="invitationError" class="hidden"></p>
             <button>Submit</button>
           </form>
-          <!--  -->
-          <p class="hidden">
-            Unable to find that ID of #. If your ID is not working, please
-            contact us
-          </p>
-          <!--  -->
+          <!-- User Confirmation Form -->
           <form class="hidden" id="userConfirmationForm">
-            <ul>
-              <li>
-                <p><span>Name:</span> Adrian Philip Scott Pearman</p>
-                <select>
-                  <option>Attending</option>
-                  <option>Unable to attend</option>
-                </select>
-              </li>
-            </ul>
+            <ul></ul>
             <button>Submit</button>
           </form>
-          <!--  -->
-          <p class="hidden">Thank you for submitting!</p>
+          <!-- Thank You Container  -->
+          <div class="thankYouContainer hidden">
+            <div class="photoContainer">
+              <div class="textContainer">
+                <p>Thank You</p>
+                <p>For Your RSVP</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="links" id="accomodations">
         <div class="wrapper">
           <h2>Accomodations <span></span></h2>
           <div class="linksContainer">
-            <div class="accomodationContainer">
+            <div class="accomodationContainer hidden">
               <div class="imgContainer">
                 <div class="img-1">
                   <img
-                    src="./styles/assets/images/accomodations/kimpton-3.jpeg"
+                    src="./styles/assets/images/accomodations/kimpton/kimpton-3.jpeg"
                     alt=""
                   />
                 </div>
                 <div class="img-2">
                   <img
-                    src="./styles/assets/images/accomodations/kimpton-2.jpeg"
+                    src="./styles/assets/images/accomodations/kimpton/kimpton-2.jpeg"
                     alt=""
                   />
                 </div>
                 <div class="img-3">
                   <img
-                    src="./styles/assets/images/accomodations/kimpton-1.jpeg"
+                    src="./styles/assets/images/accomodations/kimpton/kimpton-1.jpeg"
                     alt=""
                   />
                 </div>
@@ -402,14 +416,10 @@
                 <p><span>Address:</span> 280 Bloor St W, Toronto, ON M5S 1V8</p>
                 <p>
                   <span>Phone:</span>
-                  <a href="tel:1-416-968-0010">1-416-968-0010</a>
+                  <a href="tel:1-416-968-0010">(416) 968-0010</a>
                 </p>
                 <p>
-                  <!-- Check-In: Sunday, August 6, 2023 | Check-Out: Monday, August 7,
-                  2023 Rate: $189.00 We have booked a block of rooms at the
-                  Courtyard by Marriott Hamilton. Reservations must be received
-                  on/before July 6, 2023 to receive the preferred rate.  -->
-                  To book over the phone, please call 1-416-968-0010 and book
+                  To book over the phone, please call (416)968-0010 and book
                   under "Adrian & Jordan's Wedding". To book online: please
                   follow the website link below
                 </p>
@@ -422,46 +432,76 @@
                 </a>
               </div>
             </div>
-            <div class="accomodationContainer">
+            <div class="accomodationContainer hidden">
               <div class="imgContainer">
                 <div class="img-1">
                   <img
-                    src="./styles/assets/images/accomodations/kimpton-3.jpeg"
+                    src="./styles/assets/images/accomodations/sonesta/sonesta-3.jpeg"
                     alt=""
                   />
                 </div>
                 <div class="img-2">
                   <img
-                    src="./styles/assets/images/accomodations/kimpton-2.jpeg"
+                    src="./styles/assets/images/accomodations/sonesta/sonesta-2.jpeg"
                     alt=""
                   />
                 </div>
                 <div class="img-3">
                   <img
-                    src="./styles/assets/images/accomodations/kimpton-1.jpeg"
+                    src="./styles/assets/images/accomodations/sonesta/sonesta-1.jpeg"
                     alt=""
                   />
                 </div>
               </div>
               <div class="textContainer">
-                <h3>Kimpton Saint George</h3>
-                <p><span>Address:</span> 280 Bloor St W, Toronto, ON M5S 1V8</p>
+                <h3>The Yorkville Royal Sonesta Hotel Toronto</h3>
+                <p><span>Address:</span> 220 Bloor St W, Toronto, ON M5S 1T8</p>
                 <p>
                   <span>Phone:</span>
-                  <a href="tel:1-416-968-0010">1-416-968-0010</a>
+                  <a href="tel:1-416-960-5200">(416) 960-5200</a>
                 </p>
-                <p>
-                  <!-- Check-In: Sunday, August 6, 2023 | Check-Out: Monday, August 7,
-                  2023 Rate: $189.00 We have booked a block of rooms at the
-                  Courtyard by Marriott Hamilton. Reservations must be received
-                  on/before July 6, 2023 to receive the preferred rate.  -->
-                  To book over the phone, please call 1-416-968-0010 and book
-                  under "Adrian & Jordan's Wedding". To book online: please
-                  follow the website link below
-                </p>
+                <p></p>
                 <a
                   class=""
-                  href="https://www.kimptonsaintgeorge.com/"
+                  href="https://www.sonesta.com/royal-sonesta/on/toronto/yorkville-royal-sonesta-hotel-toronto/"
+                  target="_blank"
+                >
+                  Website
+                </a>
+              </div>
+            </div>
+            <div class="accomodationContainer hidden">
+              <div class="imgContainer">
+                <div class="img-1">
+                  <img
+                    src="./styles/assets/images/accomodations/marriott/marriott-3.jpeg"
+                    alt=""
+                  />
+                </div>
+                <div class="img-2">
+                  <img
+                    src="./styles/assets/images/accomodations/marriott/marriott-2.jpeg"
+                    alt=""
+                  />
+                </div>
+                <div class="img-3">
+                  <img
+                    src="./styles/assets/images/accomodations/marriott/marriott-1.jpeg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="textContainer">
+                <h3>W Toronto</h3>
+                <p><span>Address:</span> 90 Bloor St E, Toronto, ON M4W 1A7</p>
+                <p>
+                  <span>Phone:</span>
+                  <a href="tel:1-416-961-8000">(416) 961-8000</a>
+                </p>
+                <p></p>
+                <a
+                  class=""
+                  href="https://www.marriott.com/en-us/hotels/yyzwh-w-toronto/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0"
                   target="_blank"
                 >
                   Website
@@ -490,10 +530,14 @@
     </div>
 
     <!-- JS Scripts -->
+    <!-- Font Awesome -->
     <script
       src="https://kit.fontawesome.com/29fab573a0.js"
       crossorigin="anonymous"
     ></script>
-    <script src="./dir/app.js"></script>
+    <!-- SupaBase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- UI Animations -->
+    <script src="./dir/app.js" type="module"></script>
   </body>
 </html>
