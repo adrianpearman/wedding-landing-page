@@ -1,5 +1,7 @@
 // BaseURL for network requests
-const baseURL = "http://localhost:9000";
+const baseURL = "https://thepearmanwedding.up.railway.app";
+// const baseURL = "http://localhost:9000";
+
 // DOM Elements
 // Navigation
 const navigation = document.querySelector("nav");
@@ -11,6 +13,7 @@ const aboutUsContentContainer = document.querySelector(
   ".aboutUs .contentContainer"
 );
 // Venue
+const venueSlider = document.querySelector(".slider");
 const venueColumns = document.querySelectorAll(".col");
 const venueDetailContainer = document.querySelector(".venueDetailContainer");
 const venueInfoContainer = document.querySelector(".venueInfoContainer");
@@ -38,6 +41,7 @@ const detailSection = document.getElementById("details");
 const rsvpSection = document.getElementById("rsvp");
 const linkSection = document.getElementById("accomodations");
 const footerSection = document.querySelector("footer");
+
 const allSections = [
   headerSection,
   aboutUsSection,
@@ -136,16 +140,23 @@ const showAboutUsSection = () => {
 const showVenueColumns = () => {
   setTimeout(() => {
     venueColumns[0].classList.remove("col-hidden");
+    venueSlider.classList.add("show");
   }, 0);
   setTimeout(() => {
+    if (window.outerWidth < 700) {
+      venueDetailContainer.classList.remove("hideVenueDetails");
+    }
     venueColumns[1].classList.remove("col-hidden");
   }, 600);
-  setTimeout(() => {
-    venueColumns[2].classList.remove("col-hidden");
-  }, 1200);
-  setTimeout(() => {
-    venueDetailContainer.classList.remove("hideVenueDetails");
-  }, 1800);
+
+  if (window.outerWidth >= 700) {
+    setTimeout(() => {
+      venueColumns[2].classList.remove("col-hidden");
+    }, 1200);
+    setTimeout(() => {
+      venueDetailContainer.classList.remove("hideVenueDetails");
+    }, 1800);
+  }
 };
 //Animating Details Section
 const showDetails = () => {
@@ -154,30 +165,31 @@ const showDetails = () => {
 // Animating Details SVGs
 const showDetailSVGs = () => {
   const timelineItems = timelineContainer.children;
-  const mobileTimelineItems = timelineContainerMobile.children;
+  const mobileTimelineRow1Items = timelineContainerMobile.children[0].children;
+  const mobileTimelineRow2Items = timelineContainerMobile.children[1].children;
   setTimeout(() => {
     timelineItems[0].classList.remove("hidden");
-    mobileTimelineItems[0].classList.remove("hidden");
+    mobileTimelineRow1Items[0].classList.remove("hidden");
   }, 0);
   setTimeout(() => {
     timelineItems[1].classList.remove("hidden");
-    mobileTimelineItems[1].classList.remove("hidden");
+    mobileTimelineRow1Items[1].classList.remove("hidden");
   }, 300);
   setTimeout(() => {
     timelineItems[2].classList.remove("hidden");
-    mobileTimelineItems[2].classList.remove("hidden");
+    mobileTimelineRow1Items[2].classList.remove("hidden");
   }, 600);
   setTimeout(() => {
     timelineItems[3].classList.remove("hidden");
-    mobileTimelineItems[3].classList.remove("hidden");
+    mobileTimelineRow2Items[0].classList.remove("hidden");
   }, 900);
   setTimeout(() => {
     timelineItems[4].classList.remove("hidden");
-    mobileTimelineItems[4].classList.remove("hidden");
+    mobileTimelineRow2Items[1].classList.remove("hidden");
   }, 1200);
   setTimeout(() => {
     timelineItems[5].classList.remove("hidden");
-    mobileTimelineItems[5].classList.remove("hidden");
+    mobileTimelineRow2Items[2].classList.remove("hidden");
   }, 1500);
 };
 // Animating the accomodations
@@ -477,12 +489,32 @@ const userConfirmationFormAction = async (e) => {
   const filteredEmailList = filteredArr(guestEmails);
 
   filteredEmailList.forEach((email) => {
-    // TODO: figure out how to send an email (sendgrid or mailgun)
-    submitEmail(email);
+    console.log(email);
+    // submitEmail(email);
   });
 
   userConfirmationForm.classList.add("none");
+  scrollToElement(e, rsvpSection, true);
   document.querySelector(".thankYouContainer").classList.remove("hidden");
+};
+// ----- ACCOMODATIONS FUNCTIONS -----
+const animateAccomodationImgs = () => {
+  // Accomodation Imgs
+  const accImgs = document.querySelectorAll(
+    ".accomodationContainer .imgContainer"
+  );
+  for (const i of accImgs) {
+    for (const j of i.children) {
+      // toggle class when img is clicked
+      j.addEventListener("click", () => {
+        if (j.classList.contains("hover")) {
+          j.classList.remove("hover");
+        } else {
+          j.classList.add("hover");
+        }
+      });
+    }
+  }
 };
 // ----- NAMESPACE OBJECT -----
 const weddingObj = {
@@ -500,7 +532,6 @@ const weddingObj = {
       closeMobileNavigation(e)
     );
     mobileNavigation.addEventListener("click", (e) => closeMobileNavigation(e));
-
     // Header RSVP Button
     rsvpButton.addEventListener("click", (e) => scrollToSection(e));
     // Scroll to Top Button
@@ -513,7 +544,8 @@ const weddingObj = {
     //  RSVP Forms
     userIDForm.addEventListener("submit", userIDFormAction);
     userConfirmationForm.addEventListener("submit", userConfirmationFormAction);
-
+    // Accomodations
+    animateAccomodationImgs();
     // ----- UI Changes -----
     // Navigation - ensures the navigation is visble when page is refreshed
     // from a location other than the top of the page
