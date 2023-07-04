@@ -7,8 +7,8 @@
     width: 50%;
   }
 }
-// 900px
-@media (max-width: $displaySmallLaptop) {
+// 950px
+@media (max-width: calc($displaySmallLaptop + 50px)) {
   // NAVIGATION
   nav {
     ul {
@@ -22,7 +22,10 @@
       }
     }
   }
+}
 
+// 900px
+@media (max-width: $displaySmallLaptop) {
   // HEADER
   header {
     .wrapper {
@@ -87,8 +90,9 @@
 
     .imgContainer,
     .textContainer {
-      width: 80%;
+      height: 500px;
       margin: 10px auto;
+      width: 80%;
     }
 
     .textContainer p {
@@ -146,6 +150,12 @@
       display: flex;
     }
   }
+  // RSVP
+  .rsvp {
+    form {
+      text-align: center;
+    }
+  }
   // ACCOMODATIONS
   .links {
     .imgContainer,
@@ -163,14 +173,8 @@
 }
 // 500px
 @media (max-width: $mobile) {
-  .rsvp input {
-    &::placeholder {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-  }
 }
-// 425px;
+// 425px
 @media (max-width: $mobileSmall) {
   .aboutUs,
   .location,
@@ -179,7 +183,17 @@
   .links {
     .wrapper {
       h2 {
-        font-size: 3rem;
+        font-size: 3rem !important;
+      }
+    }
+  }
+}
+// 375px
+@media (max-width: calc($mobileSmall - 50px)) {
+  .links {
+    .wrapper {
+      h2 {
+        font-size: 2.5rem !important;
       }
     }
   }

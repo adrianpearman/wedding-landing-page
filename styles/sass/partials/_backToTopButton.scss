@@ -1,0 +1,32 @@
+@use "./variables" as *;
+
+.backToTop {
+  bottom: 10px;
+  position: fixed;
+  right: 10px;
+
+  button {
+    background-color: $cream;
+    border: 2px solid $primaryColorDark;
+    color: $primaryColorDark;
+    font-family: $secondaryFont;
+    font-size: 2rem;
+    display: inline-block;
+    padding: 15px;
+    opacity: 0;
+    text-transform: uppercase;
+    transition: all 200ms;
+
+    &:focus,
+    &:hover {
+      background-color: $primaryColorDark;
+      border-color: $cream;
+      color: $cream;
+      cursor: pointer;
+    }
+
+    &.show {
+      opacity: 1;
+    }
+  }
+}

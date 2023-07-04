@@ -6,8 +6,6 @@
   height: initial;
 
   .wrapper {
-    background: $wrapperColor;
-
     h2 {
       @include sectionTitle;
     }
@@ -28,7 +26,7 @@
 
       .imgContainer {
         div {
-          &:hover {
+          &.hover {
             height: 100%;
             left: auto;
             top: 0;
@@ -85,7 +83,7 @@
       transition: all 500ms;
       width: 300px;
 
-      &:hover {
+      &.hover {
         height: 100%;
         left: 0;
         top: 0;

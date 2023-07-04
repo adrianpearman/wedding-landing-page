@@ -622,6 +622,11 @@ template {
   overflow: hidden;
   position: relative;
   width: 90%;
+  opacity: 0;
+  transition: all 300ms;
+}
+.slider.show {
+  opacity: 1;
 }
 
 .slide {
@@ -758,45 +763,21 @@ main {
   position: relative;
 }
 
-.backToTop {
-  bottom: 10px;
-  position: fixed;
-  right: 10px;
-}
-.backToTop i {
-  background-color: transparent;
-  border: 2px solid #1b4508;
-  border-radius: 50%;
-  color: #1b4508;
-  font-size: 3rem;
-  display: inline-block;
-  padding: 15px;
-  opacity: 0;
-  transition: all 200ms;
-}
-.backToTop i:focus, .backToTop i:hover {
-  background-color: #1b4508;
-  border-color: #fffaf1;
-  color: #fffaf1;
-  cursor: pointer;
-}
-.backToTop i.show {
-  opacity: 1;
-}
-
 .hidden {
   display: none;
 }
 
 .aboutUs {
   height: 100vh;
-  background: #fffaf1;
+  background: #fffbf2;
   display: flex;
   justify-content: center;
+  height: initial;
+  min-height: 100vh;
 }
 .aboutUs .wrapper {
-  background: rgba(255, 255, 255, 0.5);
-  height: 85%;
+  display: flex;
+  flex-direction: column;
 }
 .aboutUs .wrapper h2 {
   font-family: "Fontspring-Bold", "Arial Black";
@@ -816,14 +797,12 @@ main {
 .aboutUs .contentContainer {
   display: flex;
   flex-direction: row;
-  height: inherit;
   transition: all 600ms;
 }
 .aboutUs .contentContainer.hidden {
   opacity: 0;
 }
 .aboutUs .imgContainer {
-  height: calc(100% - 100px);
   overflow: hidden;
   position: relative;
   width: 50%;
@@ -837,6 +816,7 @@ main {
 .aboutUs .textContainer {
   display: flex;
   flex-direction: column;
+  height: 650px;
   width: 50%;
 }
 .aboutUs .textContainer p {
@@ -846,15 +826,39 @@ main {
   width: 90%;
 }
 
+.backToTop {
+  bottom: 10px;
+  position: fixed;
+  right: 10px;
+}
+.backToTop button {
+  background-color: #fffbf2;
+  border: 2px solid #1b4508;
+  color: #1b4508;
+  font-family: Fontspring, Arial;
+  font-size: 2rem;
+  display: inline-block;
+  padding: 15px;
+  opacity: 0;
+  text-transform: uppercase;
+  transition: all 200ms;
+}
+.backToTop button:focus, .backToTop button:hover {
+  background-color: #1b4508;
+  border-color: #fffbf2;
+  color: #fffbf2;
+  cursor: pointer;
+}
+.backToTop button.show {
+  opacity: 1;
+}
+
 .details {
   height: 100vh;
-  background: #fffaf1;
+  background: #fffbf2;
   display: flex;
   justify-content: center;
   height: initial;
-}
-.details .wrapper {
-  background: rgba(255, 255, 255, 0.5);
 }
 .details .wrapper h2 {
   font-family: "Fontspring-Bold", "Arial Black";
@@ -944,16 +948,60 @@ main {
 }
 .details .timelineContainerMobile {
   display: none;
-  flex-wrap: wrap;
-  opacity: 1;
-  min-height: 400px;
+  flex-direction: column;
+}
+.details .timelineContainerMobile .timelineMobileRow1,
+.details .timelineContainerMobile .timelineMobileRow2 {
+  position: relative;
+  height: 150px;
+  width: 100%;
+}
+.details .timelineContainerMobile .timelineMobileRow1 .timelineItem:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+.details .timelineContainerMobile .timelineMobileRow1 .timelineItem:nth-child(2) {
+  top: 0;
+  left: 33%;
+}
+.details .timelineContainerMobile .timelineMobileRow1 .timelineItem:nth-child(3) {
+  top: 0;
+  left: 66%;
+}
+.details .timelineContainerMobile .timelineMobileRow2 .timelineItem:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+.details .timelineContainerMobile .timelineMobileRow2 .timelineItem:nth-child(2) {
+  top: 0;
+  left: 33%;
+}
+.details .timelineContainerMobile .timelineMobileRow2 .timelineItem:nth-child(3) {
+  top: 0;
+  left: 66%;
 }
 .details .timelineContainerMobile .timelineItem {
-  width: calc(33.3333333333% - 40px);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: all 600ms;
   margin: 20px;
+  min-height: 100px;
+  width: calc(33.3333333333% - 40px);
+}
+.details .timelineContainerMobile .timelineItem.hidden {
+  opacity: 0;
+  left: 0;
 }
 .details .timelineContainerMobile .timelineItem img {
   width: 100%;
+}
+.details .timelineContainerMobile .timelineItem p {
+  margin: 0;
 }
 
 footer {
@@ -968,11 +1016,11 @@ footer {
 footer p {
   font-size: 2rem;
   width: 100%;
-  color: #fffaf1;
+  color: #fffbf2;
 }
 footer p a {
   color: inherit;
-  border-bottom: 2px solid #fffaf1;
+  border-bottom: 2px solid #fffbf2;
   text-decoration: none;
 }
 
@@ -1045,13 +1093,10 @@ header button:focus, header button:hover {
 
 .links {
   height: 100vh;
-  background: #fffaf1;
+  background: #fffbf2;
   display: flex;
   justify-content: center;
   height: initial;
-}
-.links .wrapper {
-  background: rgba(255, 255, 255, 0.5);
 }
 .links .wrapper h2 {
   font-family: "Fontspring-Bold", "Arial Black";
@@ -1080,7 +1125,7 @@ header button:focus, header button:hover {
 .links .accomodationContainer:nth-child(2) {
   flex-direction: row-reverse;
 }
-.links .accomodationContainer:nth-child(2) .imgContainer div:hover {
+.links .accomodationContainer:nth-child(2) .imgContainer div.hover {
   height: 100%;
   left: auto;
   top: 0;
@@ -1130,14 +1175,14 @@ header button:focus, header button:hover {
   transition: all 500ms;
   width: 300px;
 }
-.links .imgContainer div:hover {
+.links .imgContainer div.hover {
   height: 100%;
   left: 0;
   top: 0;
   width: 100%;
   z-index: 1;
 }
-.links .imgContainer div:hover img {
+.links .imgContainer div.hover img {
   opacity: 1;
   transform: scale(1);
 }
@@ -1197,19 +1242,16 @@ header button:focus, header button:hover {
 }
 .links .textContainer a:focus, .links .textContainer a:hover {
   background-color: #1b4508;
-  border: 1px solid #fffaf1;
-  color: #fffaf1;
+  border: 1px solid #fffbf2;
+  color: #fffbf2;
 }
 
 .location {
   height: 100vh;
-  background: #fffaf1;
+  background: #fffbf2;
   display: flex;
   justify-content: center;
   height: initial;
-}
-.location .wrapper {
-  background: rgba(255, 255, 255, 0.5);
 }
 .location .wrapper h2 {
   font-family: "Fontspring-Bold", "Arial Black";
@@ -1405,7 +1447,7 @@ nav ul li a {
   width: 100%;
 }
 nav.active {
-  background-color: #fffaf1;
+  background-color: #fffbf2;
 }
 nav.active a {
   color: #b1b1b1;
@@ -1417,14 +1459,13 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
 
 .rsvp {
   height: 100vh;
-  background: #fffaf1;
+  background: #fffbf2;
   display: flex;
   justify-content: center;
   height: initial;
   min-height: 100vh;
 }
 .rsvp .wrapper {
-  background: rgba(255, 255, 255, 0.5);
   width: 90%;
 }
 .rsvp .wrapper h2 {
@@ -1496,7 +1537,7 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: #fffaf1;
+  background-color: #fffbf2;
   border: none;
   font-family: Fontspring, Arial;
   font-size: 3rem;
@@ -1517,7 +1558,7 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
 }
 .rsvp form li .selectContainer .iconContainer i {
   font-size: 20px;
-  color: #fffaf1;
+  color: #fffbf2;
 }
 .rsvp .emailContainer,
 .rsvp .textContainer {
@@ -1534,7 +1575,7 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
   padding: 20px;
 }
 .rsvp label {
-  font-family: Fontspring, Arial;
+  font-family: Avenir, sans-serif;
   margin-right: 10px;
 }
 .rsvp input {
@@ -1543,11 +1584,11 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
   font-family: Avenir, sans-serif;
 }
 .rsvp input::-moz-placeholder {
-  text-transform: capitalize;
+  text-transform: uppercase;
   letter-spacing: 2px;
 }
 .rsvp input::placeholder {
-  text-transform: capitalize;
+  text-transform: uppercase;
   letter-spacing: 2px;
 }
 .rsvp label,
@@ -1556,7 +1597,7 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
   margin-bottom: 10px;
 }
 .rsvp button {
-  background-color: #fffaf1;
+  background-color: #fffbf2;
   border: 1px solid #1b4508;
   color: #1b4508;
   font-family: Fontspring, Arial;
@@ -1565,13 +1606,21 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
 }
 .rsvp button:hover {
   background-color: #1b4508;
-  color: #fffaf1;
+  color: #fffbf2;
 }
 .rsvp #userIDForm input {
   padding: 20px;
 }
 .rsvp #userIDForm label {
   border-color: transparent;
+}
+.rsvp #invitationError {
+  border-bottom: 2px solid red;
+  color: red;
+  margin: 30px auto;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  width: 80%;
 }
 .rsvp .thankYouContainer {
   display: flex;
@@ -1599,6 +1648,7 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
   left: 0;
   margin: 0;
   position: absolute;
+  text-align: center;
   top: 0;
   width: 100%;
 }
@@ -1616,7 +1666,7 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
     width: 50%;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 950px) {
   nav ul.wrapper {
     width: 100%;
     margin: 0;
@@ -1625,6 +1675,8 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
   nav ul li a {
     letter-spacing: 2px;
   }
+}
+@media (max-width: 900px) {
   header .wrapper {
     height: 40%;
   }
@@ -1656,7 +1708,7 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
   }
   nav.active a,
   nav.active ul i {
-    color: #fffaf1;
+    color: #fffbf2;
   }
   nav.active i {
     color: #1b4508;
@@ -1666,8 +1718,9 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
   }
   .aboutUs .imgContainer,
   .aboutUs .textContainer {
-    width: 80%;
+    height: 500px;
     margin: 10px auto;
+    width: 80%;
   }
   .aboutUs .textContainer p {
     margin-top: 0;
@@ -1705,6 +1758,9 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
   .details .timelineContainerMobile {
     display: flex;
   }
+  .rsvp form {
+    text-align: center;
+  }
   .links .imgContainer,
   .links .textContainer {
     width: 100%;
@@ -1716,22 +1772,17 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
     flex-direction: column !important;
   }
 }
-@media (max-width: 500px) {
-  .rsvp input::-moz-placeholder {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-  .rsvp input::placeholder {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-}
 @media (max-width: 425px) {
   .aboutUs .wrapper h2,
   .location .wrapper h2,
   .details .wrapper h2,
   .rsvp .wrapper h2,
   .links .wrapper h2 {
-    font-size: 3rem;
+    font-size: 3rem !important;
+  }
+}
+@media (max-width: 375px) {
+  .links .wrapper h2 {
+    font-size: 2.5rem !important;
   }
 }

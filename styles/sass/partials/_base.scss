@@ -32,36 +32,6 @@ main {
   position: relative;
 }
 
-.backToTop {
-  bottom: 10px;
-  position: fixed;
-  right: 10px;
-
-  i {
-    background-color: transparent;
-    border: 2px solid $primaryColorDark;
-    border-radius: 50%;
-    color: $primaryColorDark;
-    font-size: 3rem;
-    display: inline-block;
-    padding: 15px;
-    opacity: 0;
-    transition: all 200ms;
-
-    &:focus,
-    &:hover {
-      background-color: $primaryColorDark;
-      border-color: $cream;
-      color: $cream;
-      cursor: pointer;
-    }
-
-    &.show {
-      opacity: 1;
-    }
-  }
-}
-
 .hidden {
   display: none;
 }

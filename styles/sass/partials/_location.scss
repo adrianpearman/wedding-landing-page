@@ -5,8 +5,6 @@
   @include contentHeight;
   height: initial;
   .wrapper {
-    background: $wrapperColor;
-
     h2 {
       @include sectionTitle;
     }
