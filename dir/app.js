@@ -1,6 +1,6 @@
 // BaseURL for network requests
 const baseURL = "https://thepearmanwedding.up.railway.app";
-// const baseURL = "http://localhost:9000";
+// const baseURL = "http://localhost:9000"; // For Dev Purposes
 
 // DOM Elements
 // Navigation
@@ -487,15 +487,27 @@ const userConfirmationFormAction = async (e) => {
   }
   // Filter out duplicates from guest email array
   const filteredEmailList = filteredArr(guestEmails);
+  // Awaiting for all emails to be sent out
+  const errArray = await Promise.all(
+    filteredEmailList.map(async (email) => {
+      const sentEmail = await submitEmail(email);
+      return sentEmail;
+    })
+  );
 
-  filteredEmailList.forEach((email) => {
-    console.log(email);
-    // submitEmail(email);
-  });
-
-  userConfirmationForm.classList.add("none");
-  scrollToElement(e, rsvpSection, true);
-  document.querySelector(".thankYouContainer").classList.remove("hidden");
+  const filteredData = errArray.map((d) => d.success);
+  // if an email has failed
+  if (filteredData.includes(false)) {
+    const { msg } = errArray[filteredData.indexOf(false)];
+    // TODO handle the errors of the form
+    console.log(msg);
+    console.log("yayayayay");
+  } else {
+    // if no error exists
+    userConfirmationForm.classList.add("none");
+    scrollToElement(e, rsvpSection, true);
+    document.querySelector(".thankYouContainer").classList.remove("hidden");
+  }
 };
 // ----- ACCOMODATIONS FUNCTIONS -----
 const animateAccomodationImgs = () => {
