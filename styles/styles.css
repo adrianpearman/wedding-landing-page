@@ -769,7 +769,7 @@ main {
 
 .aboutUs {
   height: 100vh;
-  background: #fffbf2;
+  background: #fffefb;
   display: flex;
   justify-content: center;
   height: initial;
@@ -832,7 +832,7 @@ main {
   right: 10px;
 }
 .backToTop button {
-  background-color: #fffbf2;
+  background-color: #fffefb;
   border: 2px solid #1b4508;
   color: #1b4508;
   font-family: Fontspring, Arial;
@@ -845,8 +845,8 @@ main {
 }
 .backToTop button:focus, .backToTop button:hover {
   background-color: #1b4508;
-  border-color: #fffbf2;
-  color: #fffbf2;
+  border-color: #fffefb;
+  color: #fffefb;
   cursor: pointer;
 }
 .backToTop button.show {
@@ -855,7 +855,7 @@ main {
 
 .details {
   height: 100vh;
-  background: #fffbf2;
+  background: #fffefb;
   display: flex;
   justify-content: center;
   height: initial;
@@ -1016,11 +1016,11 @@ footer {
 footer p {
   font-size: 2rem;
   width: 100%;
-  color: #fffbf2;
+  color: #fffefb;
 }
 footer p a {
   color: inherit;
-  border-bottom: 2px solid #fffbf2;
+  border-bottom: 2px solid #fffefb;
   text-decoration: none;
 }
 
@@ -1093,7 +1093,7 @@ header button:focus, header button:hover {
 
 .links {
   height: 100vh;
-  background: #fffbf2;
+  background: #fffefb;
   display: flex;
   justify-content: center;
   height: initial;
@@ -1242,13 +1242,13 @@ header button:focus, header button:hover {
 }
 .links .textContainer a:focus, .links .textContainer a:hover {
   background-color: #1b4508;
-  border: 1px solid #fffbf2;
-  color: #fffbf2;
+  border: 1px solid #fffefb;
+  color: #fffefb;
 }
 
 .location {
   height: 100vh;
-  background: #fffbf2;
+  background: #fffefb;
   display: flex;
   justify-content: center;
   height: initial;
@@ -1447,7 +1447,7 @@ nav ul li a {
   width: 100%;
 }
 nav.active {
-  background-color: #fffbf2;
+  background-color: #fffefb;
 }
 nav.active a {
   color: #b1b1b1;
@@ -1459,7 +1459,7 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
 
 .rsvp {
   height: 100vh;
-  background: #fffbf2;
+  background: #fffefb;
   display: flex;
   justify-content: center;
   height: initial;
@@ -1537,7 +1537,7 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: #fffbf2;
+  background-color: #fffefb;
   border: none;
   font-family: Fontspring, Arial;
   font-size: 3rem;
@@ -1558,7 +1558,7 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
 }
 .rsvp form li .selectContainer .iconContainer i {
   font-size: 20px;
-  color: #fffbf2;
+  color: #fffefb;
 }
 .rsvp .emailContainer,
 .rsvp .textContainer {
@@ -1597,7 +1597,7 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
   margin-bottom: 10px;
 }
 .rsvp button {
-  background-color: #fffbf2;
+  background-color: #fffefb;
   border: 1px solid #1b4508;
   color: #1b4508;
   font-family: Fontspring, Arial;
@@ -1606,7 +1606,7 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
 }
 .rsvp button:hover {
   background-color: #1b4508;
-  color: #fffbf2;
+  color: #fffefb;
 }
 .rsvp #userIDForm input {
   padding: 20px;
@@ -1714,7 +1714,7 @@ nav.active a.active, nav.active a:focus, nav.active a:hover {
   }
   nav.active a,
   nav.active ul i {
-    color: #fffbf2;
+    color: #fffefb;
   }
   nav.active i {
     color: #1b4508;
